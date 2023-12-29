@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: rgb(243, 235, 219);
+    padding-top: 70px;
+
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+img {
+    width: 320px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+#cuentacarrito{
+    color: white;
+    background-color: rgb(240, 89, 30);
+    border-radius: 100%;
+    display: inline-block;
+    width: 20px;
+    aspect-ratio: -1;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:15%;
+    height: 70px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.scroll{
+    background-color: rgba(0, 0, 0, 0.705);
+    box-shadow: .1rem .2rem .3rem #333;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.scroll h1{
+    color: #ffffff;
+}
+
+.scroll .carrito{
+    color: white;
+}
+
+.carrito{
+    background-color: transparent;
+    border: none;
+}
+
+i{
+    font-size: xx-large;
+    color: gray;
+}
+
+i:hover{
+    color: rgb(189, 189, 189);
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+h2{
+    padding: 5px;
+}
+
+.fa-trash-can {
+    cursor: pointer;
+    color: #000000;
+    margin-left: 8px;
+    margin-top: 2px;
+    font-size: medium;
+}
+
+#listaCarrito li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-top: 1px solid rgb(224, 223, 223);
+}
+
+#listaCarrito li .cantidad {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.totalCalc{
+    border-top: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+
+.boton-limpiar {
+    display: block;
+    margin: 10px auto;
+    background-color: #ff0000; 
+    color: #ffffff; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-limpiar:hover {
+    background-color: #cc0000;
+}
+
+.boton-comprar{
+    display: block;
+    margin: 10px auto;
+    background-color: #00ff00; 
+    color: #ffffff; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-comprar:hover {
+    background-color: #00cc00;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+.contenedor>div{
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: rgb(161, 140, 100);
+    border-radius: 20px;
+}
+#contenedor{
+    margin-top: 80px;
+}
+.card:hover{
+    transform: scale(1.03);
+    transition: 0.6s;
+}
+
+.informacion{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:15px;
+}
+.informacion>p:first-child{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+.informacion .precio {
+    font-size: 20px;
+    font-weight: 500;
+}
+.informacion .precio span{
+    font-size: 17px;
+    font-weight: 300;
+}
+.informacion button{
+    background-color: #52402f;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+
+    font-size: 17px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.informacion button:hover{
+    background-color: rgb(214, 208, 179)
+}
+
+.comentar{
+    font-size: 20px;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: separate;
+    /* border-spacing: 0 10px; */
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Estilos para las celdas de la tabla */
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilos para la primera fila (encabezado) */
+th {
+    background-color: #6d583d;
+    color: white;
+    border-top-left-radius: 15px; /* Redondear esquina superior izquierda */
+    border-top-right-radius: 15px; /* Redondear esquina superior derecha */
+}
+
+/* Estilos para la última fila (último comentario) */
+tr:last-child td {
+    border-bottom: none; /* Elimina la línea separadora del último comentario */
+}
+
+/* Estilos para las celdas del encabezado */
+thead th {
+    background-color: #6d583d;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilos para las celdas de datos */
+tbody td {
+    padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #d2c4a2;
+}
+
+/* Estilos para las celdas al pasar el mouse sobre ellas (opcional) */
+tbody tr:hover td {
+    background-color: #a89777;
+    color: white;
+}
+
+tbody tr {
+    border-bottom: 1px solid #6d583d; /* Línea fina entre filas */
+}
+
+footer{
+    background-color: rgb(105, 85, 43);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+
+.redes a{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.redes a i{
+    letter-spacing: 30px;
+    font-size: 45px;
+    color: wheat;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vivero">
+    <meta name="keywords" content="vivero, plantas, naturaleza, flores, macetas, tierra">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./assets/Captura-removebg-preview.png">
+    <title>Vivero Online</title>
+
+</head>
+
+<body>
+    <header id="header">
+        <h1>Vivero Online</h1> 
+        <button id="botonCarrito" class="carrito"><i class="fa-solid fa-cart-shopping"></i><span id="cuentacarrito">0</span></button>
+        <!-- MODAL -->
+        <div id="modal" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+                <h2>Tu carrito de Compras</h2>
+                <ul id="listaCarrito"></ul>
+                <p class="totalCalc">Total: <span id="totalCarrito">$0.00</span></p>
+                <button class="boton-limpiar" onclick="limpiarCarritoConConfirmacion()">Vaciar Carrito</button>
+                <button class="boton-comprar">Realizar Compra</button>
+            </div>
+        </div>
+        <!-- FIN MODAL         -->
+    </header>
+    <div id="contenedor" class="contenedor">
+        <div class="card">
+            <img src="./assets/img(1).jpg" alt="producto 1">
+            <div class="informacion">
+                <p>Monstera Adansonii</p>
+                <p class="precio">$2500<span>,00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/img(2).jpg" alt="producto 2">
+            <div class="informacion">
+                <p>Monstera Deliciosa</p>                   
+                <p class="precio">$4500<span>,00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/img(3).jpg" alt="producto 3">
+            <div class="informacion">
+                <p>Ficus Elastica Variegado</p>                   
+                <p class="precio">$6500<span>,00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/img(4).jpg" alt="producto 4">
+            <div class="informacion">
+                <p>Potus Silver</p>                   
+                <p class="precio">$3900<span>,00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/img(5).jpg" alt="producto 5">
+            <div class="informacion">
+                <p>Potus</p>                   
+                <p class="precio">$1500<span>.00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/img(6).JPG" alt="producto 6">
+            <div class="informacion">
+                <p>Helecho</p>                   
+                <p class="precio">$3400<span>.00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/img(7).jpg" alt="producto 7">
+            <div class="informacion">
+                <p>Filodendro hederaceum</p>                   
+                <p class="precio">$4450<span>.00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/img(8).jpg" alt="producto 8">
+            <div class="informacion">
+                <p>Calathea Triostar</p>                   
+                <p class="precio">$4900<span>.00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/img(9).jpg" alt="producto 9">
+            <div class="informacion">
+                <p>Croton Codiaeum</p>                   
+                <p class="precio">$2700<span>.00</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <marquee class="comentar">🌱 No olvide dejarnos su comentario, nos sirve para saber en que mejorar día a día 👍</marquee>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Clientes</th>
+                        <th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody_comentarios"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Creado por Milena Franzese - Proyecto CODERHOUSE</h3>
+        <div class="redes">
+            <a href="https://instagram.com/mileneiii?igshid=OGQ5ZDc2ODk2ZA=">
+                <i class="fa-brands fa-instagram"> </i>
+            </a>
+            <a href="https://github.com/MilenaFranzese">
+                <i class="fa-brands fa-square-github"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="./JS/app.js"></script>
+</body>
+
+</html>
